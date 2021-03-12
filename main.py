@@ -7,6 +7,13 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.assign_widgets()
+
+    def assign_widgets(self):
+        self.ui.pushButton.clicked.connect(self.go_pushed)
+    
+    def go_pushed(self):
+        self.ui.textEdit.append('It Worked')
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
