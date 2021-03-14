@@ -1,6 +1,9 @@
 #Folder of gifs to test with
 TestFiles/
 
+#No exes!
+*.exe
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
