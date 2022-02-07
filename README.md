@@ -8,7 +8,7 @@ GUI for Google’s gif2webp conversion tool! I made this while working on a gif 
 ## Installation
 Clone the repository and install the requirements with pip:
 
-    $ git clone https://github.com/TomRubicon/WordleClone.git
+    $ git clone https://github.com/TomRubicon/WebpConvertGui.git
     $ pip install -r requirements.txt
 
 Next download gif2webp/webpmux executables and place them in the script directory!
