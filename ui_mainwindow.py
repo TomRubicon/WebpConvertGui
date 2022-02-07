@@ -26,6 +26,9 @@ class Ui_MainWindow(object):
         self.txt_workingdir = QTextBrowser(self.centralwidget)
         self.txt_workingdir.setObjectName(u"txt_workingdir")
         self.txt_workingdir.setGeometry(QRect(10, 20, 541, 26))
+        self.txt_workingdir.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.txt_workingdir.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.txt_workingdir.setLineWrapMode(QTextEdit.NoWrap)
         self.txt_dircontents = QTextBrowser(self.centralwidget)
         self.txt_dircontents.setObjectName(u"txt_dircontents")
         self.txt_dircontents.setEnabled(False)
@@ -59,6 +62,9 @@ class Ui_MainWindow(object):
         self.txt_outputdir.setObjectName(u"txt_outputdir")
         self.txt_outputdir.setEnabled(False)
         self.txt_outputdir.setGeometry(QRect(10, 70, 541, 26))
+        self.txt_outputdir.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.txt_outputdir.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.txt_outputdir.setLineWrapMode(QTextEdit.NoWrap)
         self.lbl_webpinstallwarning = QLabel(self.centralwidget)
         self.lbl_webpinstallwarning.setObjectName(u"lbl_webpinstallwarning")
         self.lbl_webpinstallwarning.setGeometry(QRect(100, 610, 481, 20))
@@ -144,7 +150,7 @@ class Ui_MainWindow(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Open a directory to see gifs</p></body></html>", None))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">No directory selected</p></body></html>", None))
         self.lbl_dircontents.setText(QCoreApplication.translate("MainWindow", u"Gifs In Dir:", None))
         self.txt_thumbsuffix.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
@@ -187,6 +193,6 @@ class Ui_MainWindow(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Output</p></body></html>", None))
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
     # retranslateUi
 

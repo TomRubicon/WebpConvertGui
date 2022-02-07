@@ -2,8 +2,11 @@ import sys
 import os
 from os import listdir, path
 from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog
-from PySide6.QtCore import QProcess
+from PySide6.QtCore import QObject, QProcess
 from ui_mainwindow import Ui_MainWindow
+
+class Gif2Webp(QObject):
+    pass
 
 class MainWindow(QMainWindow):
     def  __init__(self):
@@ -74,7 +77,6 @@ class MainWindow(QMainWindow):
         self.p = None
 
     def handle_cmb_compressionmode(self):
-        print(f'Combo box index changed to {self.ui.cmb_compressionmode.currentText()}')
         if self.ui.cmb_compressionmode.currentText() == 'Lossy':
             self.ui.txt_lossyfiltering.setEnabled(True)
             self.ui.lbl_lossyfiltering.setEnabled(True)
@@ -95,13 +97,17 @@ class MainWindow(QMainWindow):
         path = os.getcwd()
 
         self.gifs.clear()
+        self.ui.txt_dircontents.clear()
 
         for f in listdir(path):
             if f.endswith('.gif'):
                 self.gifs.append(f)
         
+        if len(self.gifs) < 1:
+            self.ui.txt_dircontents.setText('No gifs found in this folder!')
+
         self.ui.txt_dircontents.setEnabled(True)
-        self.ui.txt_dircontents.clear()
+        
 
         self.ui.lbl_gifcount.setText(str(len(self.gifs)))
 
@@ -135,8 +141,10 @@ class MainWindow(QMainWindow):
     def enable_thumb_text(self):
         if self.ui.chb_makethumbs.isChecked():
             self.ui.txt_thumbsuffix.setEnabled(True)
+            self.ui.lbl_thumbsuffix.setEnabled(True)
         else:
             self.ui.txt_thumbsuffix.setEnabled(False)
+            self.ui.lbl_thumbsuffix.setEnabled(False)
     
     def enable_lossy(self, b):
         if b == True:
