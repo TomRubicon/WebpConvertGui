@@ -22,3 +22,7 @@ Finally run the script!
     $ python main.py
     
 Enjoy!
+
+## Made with
+- Python 3.8.1
+- PySide 6.0.2
